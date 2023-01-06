@@ -139,17 +139,20 @@ console.log(arrayPasswordInput);
 
 // Function for getting a random element from an array
 let newPasswordString = '';
+// let randomIndex = Math.floor(Math.random() * arrayPasswordInput.length);
+// console.log(randomIndex);
 
 function getRandom(arr) {
   for(let arr = 0; arr<userNumberInput; arr++) {
-    newPasswordString += arrayPasswordInput[arr];
+    let randomIndex = Math.floor(Math.random() * arrayPasswordInput.length);
+    newPasswordString += arrayPasswordInput[randomIndex];
+    console.log(randomIndex);
+
   }
-  console.log()
   let passwordText = document.querySelector('#password');
   passwordText.value = newPasswordString;
 }
-let passwordText = document.querySelector('#password');
-passwordText.value = newPasswordString;
+
 
 
  // this generates a random special character

@@ -88,9 +88,10 @@ let upperCasedCharacters = [
   'Z'
 ];
 
+// This function prompts the user to enter a password length from 10-64 and it will repeat if the user not meet this condition, once the met the value is stored in a variable that is accessible by the getPasswordOptions function.
 function userPasswordLength () {
   let lengthOfPassword = prompt('Enter the number of characters you would like your pasword (e.g 10)');
-  parseInt(lengthOfPassword);
+  parseInt(lengthOfPassword); //turns the prompt string into a number so that it can be compared to a number in the conditional statement//
   if (lengthOfPassword < 9 || lengthOfPassword > 64) {
     userPasswordLength ();
   }
@@ -123,25 +124,6 @@ function getRandom(arr) {
 
   console.log(randomSpecialCharacter);
 
-  randompw += randomSpecialCharacter;
-
-  // this generates a random numeric character
-  let randomNumericCharacters = Math.floor(Math.random() * numericCharacters.length);
-
-  randompw += randomNumericCharacters;
-
-  
-  // this generates a random lowercase character
-  let randomLowerCasedCharacters = Math.floor(Math.random() * lowerCasedCharacters.length);
-
-  randompw += randomLowerCasedCharacters;
-
-
-  // this generates a random uppercase character
-  let randomUpperCasedCharacters = Math.floor(Math.random() * upperCasedCharacters.length);
-
-  randompw += randomUpperCasedCharacters;
-  return console.log(randompw);
 }
 
 // getRandom();
@@ -156,7 +138,6 @@ let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  getPasswordOptions();
   let password = generatePassword();
   let passwordText = document.querySelector('#password');
 
@@ -196,3 +177,22 @@ generateBtn.addEventListener('click', writePassword);
     //If there is a value '' (OK) or 'Yes' string is entered we will use that array as part of the loop to create the password. 
 
 
+
+    // randompw += randomSpecialCharacter;
+
+    // // this generates a random numeric character
+    // let randomNumericCharacters = Math.floor(Math.random() * numericCharacters.length);
+  
+    // randompw += randomNumericCharacters;
+  
+    
+    // // this generates a random lowercase character
+    // let randomLowerCasedCharacters = Math.floor(Math.random() * lowerCasedCharacters.length);
+  
+    // randompw += randomLowerCasedCharacters;
+  
+    // // this generates a random uppercase character
+    // let randomUpperCasedCharacters = Math.floor(Math.random() * upperCasedCharacters.length);
+  
+    // randompw += randomUpperCasedCharacters;
+    // return console.log(randompw);

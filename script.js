@@ -89,7 +89,7 @@ let upperCasedCharacters = [
 ];
 
 let arrayPasswordInput  = []; //This will be the array that is generated based upon the selections of the prompts by the user
-
+let userNumberInput;
 
 
 // This function prompts the user to enter a password length from 10-64 and it will repeat if the user not meet this condition, once the met the value is stored in a variable that is accessible by the getPasswordOptions function.
@@ -101,13 +101,14 @@ function userPasswordLength () {
     userPasswordLength();
   }
   else {
+    userNumberInput = lengthOfPassword
     return lengthOfPassword;
   }
 }
 
 // Function to prompt user for password options and if conditions are met then the corresponding array in concatenated into the arrayPasswordInput
 function getPasswordOptions() {
-  let pwLength = userPasswordLength();
+  userPasswordLength();
   let specialPrompt = prompt('Do you want special characters? cancel(NO) ok(YES)');
   if (specialPrompt === 'Yes' || specialPrompt === '') {
     arrayPasswordInput = arrayPasswordInput.concat(specialCharacters)
@@ -124,7 +125,6 @@ function getPasswordOptions() {
   if (upperCasePrompt === 'Yes' || upperCasePrompt === '') {
     arrayPasswordInput = arrayPasswordInput.concat(upperCasedCharacters)
   }
-
 }
 
 
@@ -138,19 +138,25 @@ console.log(arrayPasswordInput);
 
 
 // Function for getting a random element from an array
+let newPasswordString = '';
+
 function getRandom(arr) {
-
-  getPasswordOptions();
-
-console.log();
-  // this generates a random special character
-  let randomSpecialCharacter = Math.floor(Math.random() * specialCharacters.length);
-
-  console.log(specialCharacters[randomSpecialCharacter]);
-
+  for(let arr = 0; arr<userNumberInput; arr++) {
+    newPasswordString += arrayPasswordInput[arr];
+  }
+  console.log()
+  let passwordText = document.querySelector('#password');
+  passwordText.value = newPasswordString;
 }
+let passwordText = document.querySelector('#password');
+passwordText.value = newPasswordString;
 
-// getRandom();
+
+ // this generates a random special character
+  // let randomSpecialCharacter = Math.floor(Math.random() * specialCharacters.length);
+
+  // console.log(specialCharacters[randomSpecialCharacter]);
+getRandom();
 
 // Function to generate password with user input
 function generatePassword(randompw) {

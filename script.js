@@ -170,11 +170,30 @@ generateBtn.addEventListener('click', writePassword);
     //In the getRandom function we will loop through the four arrays.
 
     //Before we create the password we will need to check each prompt.//
-    //First prompt we will check if the input is <= 10), if it isn't send another prompt asking for 
+    //First prompt we will check if the input is <= 10), if it isn't send another prompt asking for the numbers that meet the criteria.
 
     // whether a value is null (No) or 'NO' string is entered if it is we can skip this that array from the loop?//
 
     //If there is a value '' (OK) or 'Yes' string is entered we will use that array as part of the loop to create the password. 
+
+//getRandom function//
+
+    //This function will take the values from the getPasswordOptions and then validate each prompt. 
+
+      //Run the loop based on the number that the user has entered in the lengthOfPassword prompt, pwLength.length? 
+      //include the relevant array in the loop based on the getPasswordOptions. 
+      //Run the loop and put the values into one variable each loop?
+      //This variable can then used as the passwordText.value?
+
+
+
+
+
+
+
+
+
+
 
 
 

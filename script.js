@@ -101,6 +101,9 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
 } else if (lengthOfPassword == ''){ //If the user clicks ok and does not enter a number then they will get an alert advising them to.//
     alert('Please enter a number between 10 to 64!');
     userPromptPasswordLength();
+} else if(isNaN(Number(lengthOfPassword))) {
+    alert('Please enter a number between 10 to 64 only, no other characters!'); //If the user enters a NaN character such as 'a' this function will advise the user to enter numbers only//
+    userPromptPasswordLength();
 }
   else if (lengthOfPassword < 9 || lengthOfPassword > 64) {
     alert('Please enter a number between 10 to 64 only');

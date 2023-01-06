@@ -101,13 +101,11 @@ function userPasswordLength () {
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  userPasswordLength ();
-
+  let pwLength = userPasswordLength();
   let lowerCasePrompt = prompt('Do you want lowercase letters? cancel(NO) ok(YES)');
   let upperCasePrompt = prompt('Do you want uppercase letters? cancel(NO) ok(YES)');
   let numericPrompt = prompt('Do you want numbers? cancel(NO) ok(YES)');
   let specialPrompt = prompt('Do you want special characters? cancel(NO) ok(YES)');
-
 }
 
 

@@ -1,4 +1,4 @@
-### Vinhs Special Password Generator
+# Vinhs Special Password Generator
 
 ## What does it do?
 

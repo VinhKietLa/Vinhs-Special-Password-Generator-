@@ -135,7 +135,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let lowerCasePrompt = prompt("Do you want lowercase letters?type' r' no 'or' click ok(') or cancel(no)");s
+  let lowerCasePrompt = prompt("Do you want lowercase letters?type' r' no 'or' click ok(') or cancel(no)");
   if (lowerCasePrompt != null) {
     lowerCasePrompt = lowerCasePrompt.toUpperCase();
     if (lowerCasePrompt === 'YES' || lowerCasePrompt === '') {

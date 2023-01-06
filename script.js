@@ -118,7 +118,7 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
 }
 // This function prompts the user for password options (special characters etc) and if conditions are met then the corresponding array is concatenated into the variable arrayPasswordInput. It also checks if a value is not equal to no//
 function getPasswordOptions() {
-  let atLeastOneChracter = 0;
+  let atLeastOneChracter = 0;//This keeps a count of the number of prompts that the user has selected//
   let specialPrompt = prompt("Do you want special characters? typ 'ye' r 'no' or click ok(yes or anel(no)");
   if (specialPrompt != null) {
     specialPrompt = specialPrompt.toUpperCase();
@@ -153,7 +153,7 @@ function getPasswordOptions() {
   }
   if (atLeastOneChracter === 0) {
     alert("You need to select at least one character type!");
-    getPasswordOptions();
+    getPasswordOptions();//if no prompts are selected then the user is notified and will be given the options again//
   }
 }
 

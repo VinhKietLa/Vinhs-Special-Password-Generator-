@@ -88,32 +88,53 @@ let upperCasedCharacters = [
   'Z'
 ];
 
+let arrayPasswordInput  = []; //This will be the array that is generated based upon the selections of the prompts by the user
+
+
+
 // This function prompts the user to enter a password length from 10-64 and it will repeat if the user not meet this condition, once the met the value is stored in a variable that is accessible by the getPasswordOptions function.
 function userPasswordLength () {
   let lengthOfPassword = prompt('Enter the number of characters you would like your pasword (e.g 10)');
   lengthOfPassword = parseInt(lengthOfPassword);
   if (lengthOfPassword < 9 || lengthOfPassword > 64) {
-    userPasswordLength ();
+    alert('Please enter a number between 10-64 only');
+    userPasswordLength();
   }
   else {
-    console.log(typeof lengthOfPassword);
     return lengthOfPassword;
   }
 }
 
-// Function to prompt user for password options
+// Function to prompt user for password options and if conditions are met then the corresponding array in concatenated into the arrayPasswordInput
 function getPasswordOptions() {
   let pwLength = userPasswordLength();
-  let lowerCasePrompt = prompt('Do you want lowercase letters? cancel(NO) ok(YES)');
-  let upperCasePrompt = prompt('Do you want uppercase letters? cancel(NO) ok(YES)');
-  let numericPrompt = prompt('Do you want numbers? cancel(NO) ok(YES)');
   let specialPrompt = prompt('Do you want special characters? cancel(NO) ok(YES)');
+  if (specialPrompt === 'Yes' || specialPrompt === '') {
+    arrayPasswordInput = arrayPasswordInput.concat(specialCharacters)
+  }
+  let numericPrompt = prompt('Do you want numbers? cancel(NO) ok(YES)');
+  if (numericPrompt === 'Yes' || numericPrompt === '') {
+    arrayPasswordInput = arrayPasswordInput.concat(numericCharacters)
+  }
+  let lowerCasePrompt = prompt('Do you want lowercase letters? cancel(NO) ok(YES)');
+  if (lowerCasePrompt === 'Yes' || lowerCasePrompt === '') {
+    arrayPasswordInput = arrayPasswordInput.concat(lowerCasedCharacters)
+  }
+  let upperCasePrompt = prompt('Do you want uppercase letters? cancel(NO) ok(YES)');
+  if (upperCasePrompt === 'Yes' || upperCasePrompt === '') {
+    arrayPasswordInput = arrayPasswordInput.concat(upperCasedCharacters)
+  }
+
+}
+
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-}
 
+
+getPasswordOptions();
+console.log(arrayPasswordInput);
 
 
 // Function for getting a random element from an array
@@ -129,7 +150,7 @@ console.log();
 
 }
 
-getRandom();
+// getRandom();
 
 // Function to generate password with user input
 function generatePassword(randompw) {
@@ -188,6 +209,7 @@ generateBtn.addEventListener('click', writePassword);
       //Run the loop and put the values into one variable each loop?
       //This variable can then used as the passwordText.value?
 
+    // concat all the selected arrays and then loop based on the number of arrays that meet the conditions. 
 
 
 
@@ -218,3 +240,5 @@ generateBtn.addEventListener('click', writePassword);
   
     // randompw += randomUpperCasedCharacters;
     // return console.log(randompw);
+
+

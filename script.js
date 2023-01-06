@@ -102,11 +102,11 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
     alert('Please enter a number between 10 to 64!');
     userPromptPasswordLength();
 } else if(isNaN(Number(lengthOfPassword))) {
-    alert('Please enter a number between 10 to 64 only, no other characters!'); //If the user enters a NaN character such as 'a' this function will advise the user to enter numbers only//
+    alert('Please enter a number between 10 o 64ony, no other characters!'); //If the user enters a NaN character such as 'a' this function will advise the user to enter numbers only//
     userPromptPasswordLength();
 }
   else if (lengthOfPassword < 9 || lengthOfPassword > 64) {
-    alert('Please enter a number between 10 to 64 only');
+    alert('Please enter a number between 10 to 64 only!');
     userPromptPasswordLength(); //Calling the function again will prompt the user to input a number that meets the condition.//
   }
   else {
@@ -119,16 +119,15 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
 // This function prompts the user for password options (special characters etc) and if conditions are met then the corresponding array is concatenated into the variable arrayPasswordInput. It also checks if a value is not equal to no//
 function getPasswordOptions() {
   let atLeastOneChracter = 0;
-  let specialPrompt = prompt('Do you want special characters? cancel(NO) ok(YES)');
+  let specialPrompt = prompt("Do you want special characters? typ 'ye' r 'no' or click ok(yes or anel(no)");
   if (specialPrompt != null) {
     specialPrompt = specialPrompt.toUpperCase();
-    console.log(specialPrompt);
     if (specialPrompt === 'YES' || specialPrompt === '') {
       arrayPasswordInput = arrayPasswordInput.concat(specialCharacters);
       atLeastOneChracter++;
     }
   }
-  let numericPrompt = prompt('Do you want numbers? cancel(NO) ok(YES)');
+  let numericPrompt = prompt("Do you want numbers?type' r' no 'or' click ok(') or cancel(no)");
   if (numericPrompt != null) {
     numericPrompt = numericPrompt.toUpperCase();
     if (numericPrompt === 'YES' || numericPrompt === '') {
@@ -136,7 +135,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let lowerCasePrompt = prompt('Do you want lowercase letters? cancel(NO) ok(YES)');
+  let lowerCasePrompt = prompt("Do you want lowercase letters?type' r' no 'or' click ok(') or cancel(no)");s
   if (lowerCasePrompt != null) {
     lowerCasePrompt = lowerCasePrompt.toUpperCase();
     if (lowerCasePrompt === 'YES' || lowerCasePrompt === '') {
@@ -144,7 +143,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let upperCasePrompt = prompt('Do you want uppercase letters? cancel(NO) ok(YES)');
+  let upperCasePrompt = prompt("Do you want uppercase letters?type' r' no 'or' click ok(') or cancel(no)");
   if (upperCasePrompt != null) {
     upperCasePrompt = upperCasePrompt.toUpperCase();
     if (upperCasePrompt === 'YES' || upperCasePrompt === '') {
@@ -153,12 +152,10 @@ function getPasswordOptions() {
     }
   }
   if (atLeastOneChracter === 0) {
-    alert('You need to select at least one character type!');
+    alert("You need to select at least one character type!");
     getPasswordOptions();
   }
 }
-
-
 
 
 // This function loops through the arrayPasswordInput variable based on the number specified in the userNumberInput variable.//
@@ -229,15 +226,6 @@ generateBtn.addEventListener('click', writePassword);
       //This variable can then used as the passwordText.value?
 
     // concat all the selected arrays and then loop based on the number of arrays that meet the conditions. 
-
-
-
-
-
-
-
-
-
 
 
 

@@ -91,11 +91,12 @@ let upperCasedCharacters = [
 // This function prompts the user to enter a password length from 10-64 and it will repeat if the user not meet this condition, once the met the value is stored in a variable that is accessible by the getPasswordOptions function.
 function userPasswordLength () {
   let lengthOfPassword = prompt('Enter the number of characters you would like your pasword (e.g 10)');
-  parseInt(lengthOfPassword); //turns the prompt string into a number so that it can be compared to a number in the conditional statement//
+  lengthOfPassword = parseInt(lengthOfPassword);
   if (lengthOfPassword < 9 || lengthOfPassword > 64) {
     userPasswordLength ();
   }
   else {
+    console.log(typeof lengthOfPassword);
     return lengthOfPassword;
   }
 }
@@ -107,26 +108,28 @@ function getPasswordOptions() {
   let upperCasePrompt = prompt('Do you want uppercase letters? cancel(NO) ok(YES)');
   let numericPrompt = prompt('Do you want numbers? cancel(NO) ok(YES)');
   let specialPrompt = prompt('Do you want special characters? cancel(NO) ok(YES)');
-}
-
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+}
+
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
-  let randompw = '';
+  getPasswordOptions();
 
+console.log();
   // this generates a random special character
   let randomSpecialCharacter = Math.floor(Math.random() * specialCharacters.length);
 
-  console.log(randomSpecialCharacter);
+  console.log(specialCharacters[randomSpecialCharacter]);
 
 }
 
-// getRandom();
+getRandom();
 
 // Function to generate password with user input
 function generatePassword(randompw) {

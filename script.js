@@ -102,7 +102,7 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
     alert('Please enter a number between 10 to 64!');
     userPromptPasswordLength();
 } else if(isNaN(Number(lengthOfPassword))) {
-    alert('Please enter a number between 10 o 64ony, no other characters!'); //If the user enters a NaN character such as 'a' this function will advise the user to enter numbers only//
+    alert('Please enter a number between 10 o 64 only, no other characters!'); //If the user enters a NaN character such as 'a' this function will advise the user to enter numbers only//
     userPromptPasswordLength();
 }
   else if (lengthOfPassword < 9 || lengthOfPassword > 64) {
@@ -119,7 +119,7 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
 // This function prompts the user for password options (special characters etc) and if conditions are met then the corresponding array is concatenated into the variable arrayPasswordInput. It also checks if a value is not equal to no//
 function getPasswordOptions() {
   let atLeastOneChracter = 0;//This keeps a count of the number of prompts that the user has selected//
-  let specialPrompt = prompt("Do you want special characters? typ 'ye' r 'no' or click ok(yes or anel(no)");
+  let specialPrompt = prompt("Do you want special characters? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
   if (specialPrompt != null) {
     specialPrompt = specialPrompt.toUpperCase();
     if (specialPrompt === 'YES' || specialPrompt === '') {
@@ -127,7 +127,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let numericPrompt = prompt("Do you want numbers?type' r' no 'or' click ok(') or cancel(no)");
+  let numericPrompt = prompt("Do you want numbers? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
   if (numericPrompt != null) {
     numericPrompt = numericPrompt.toUpperCase();
     if (numericPrompt === 'YES' || numericPrompt === '') {
@@ -135,7 +135,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let lowerCasePrompt = prompt("Do you want lowercase letters?type' r' no 'or' click ok(') or cancel(no)");
+  let lowerCasePrompt = prompt("Do you want lowercase letters? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
   if (lowerCasePrompt != null) {
     lowerCasePrompt = lowerCasePrompt.toUpperCase();
     if (lowerCasePrompt === 'YES' || lowerCasePrompt === '') {
@@ -143,7 +143,7 @@ function getPasswordOptions() {
       atLeastOneChracter++;
     }
   }
-  let upperCasePrompt = prompt("Do you want uppercase letters?type' r' no 'or' click ok(') or cancel(no)");
+  let upperCasePrompt = prompt("Do you want uppercase letters? Type'Yes' or 'No' or click ok(Yes) or cancel(No).");
   if (upperCasePrompt != null) {
     upperCasePrompt = upperCasePrompt.toUpperCase();
     if (upperCasePrompt === 'YES' || upperCasePrompt === '') {

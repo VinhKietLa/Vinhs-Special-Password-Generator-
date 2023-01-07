@@ -179,13 +179,34 @@ let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
   let passwordText = document.querySelector('#password');
+  if(newPasswordString != '') { //This conditional statement checks whether the newPasswordString is empty when the user clicks Generate Password, it's not then it clears it before providing the user with a new password.
+    newPasswordString = '';
+    console.log(newPasswordString);
+  }
+  let password = generatePassword();
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+// Event listener to allow the user to click the text area and copy the generated password//
+let copiedMessage = document.querySelector('#copiedNotification');
+copiedMessage.style.display = 'none';
+
+function copyPassword() {
+  let generatedPassword = document.querySelector('#password');
+  
+  if(generatePassword != '') { //This function when executed selects the whole text area and copies the password text making it easier to copy on mobile devices.
+    generatedPassword.select();
+    document.execCommand('copy');
+    copiedMessage.style.display = 'block'; //This gives the user a message to know that it's copied//
+  }
+}
+
+let copyPasswordBtn = document.querySelector('#password');
+copyPasswordBtn.addEventListener('click', copyPassword);
 
 
 //Pseudo code //

@@ -119,37 +119,28 @@ if (lengthOfPassword == null) {//If the user clicks cancel then the window will 
 // This function prompts the user for password options (special characters etc) and if conditions are met then the corresponding array is concatenated into the variable arrayPasswordInput. It also checks if a value is not equal to no//
 function getPasswordOptions() {
   let atLeastOneChracter = 0;//This keeps a count of the number of prompts that the user has selected//
-  let specialPrompt = prompt("Do you want special characters? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
-  if (specialPrompt != null) {
-    specialPrompt = specialPrompt.toUpperCase();
-    if (specialPrompt === 'YES' || specialPrompt === '') {
+  let specialPrompt = window.confirm("Do you want special characters? Click ok(Yes) or cancel(No).");
+  if (specialPrompt) {
       arrayPasswordInput = arrayPasswordInput.concat(specialCharacters);
       atLeastOneChracter++;
     }
-  }
-  let numericPrompt = prompt("Do you want numbers? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
-  if (numericPrompt != null) {
-    numericPrompt = numericPrompt.toUpperCase();
-    if (numericPrompt === 'YES' || numericPrompt === '') {
+
+  let numericPrompt = window.confirm("Do you want numbers? Click ok(Yes) or cancel(No).");
+  if (numericPrompt) {
       arrayPasswordInput = arrayPasswordInput.concat(numericCharacters);
       atLeastOneChracter++;
     }
-  }
-  let lowerCasePrompt = prompt("Do you want lowercase letters? Type 'Yes' or 'No' or click ok(Yes) or cancel(No).");
-  if (lowerCasePrompt != null) {
-    lowerCasePrompt = lowerCasePrompt.toUpperCase();
-    if (lowerCasePrompt === 'YES' || lowerCasePrompt === '') {
+  
+  let lowerCasePrompt = window.confirm("Do you want lowercase letters? Click ok(Yes) or cancel(No).");
+  if (lowerCasePrompt) {
       arrayPasswordInput = arrayPasswordInput.concat(lowerCasedCharacters);
       atLeastOneChracter++;
     }
-  }
-  let upperCasePrompt = prompt("Do you want uppercase letters? Type'Yes' or 'No' or click ok(Yes) or cancel(No).");
-  if (upperCasePrompt != null) {
-    upperCasePrompt = upperCasePrompt.toUpperCase();
-    if (upperCasePrompt === 'YES' || upperCasePrompt === '') {
+  
+  let upperCasePrompt = window.confirm("Do you want uppercase letters? Click ok(Yes) or cancel(No).");
+  if (upperCasePrompt) {
       arrayPasswordInput = arrayPasswordInput.concat(upperCasedCharacters);
       atLeastOneChracter++;
-    }
   }
   if (atLeastOneChracter === 0) {
     alert("You need to select at least one character type!");
